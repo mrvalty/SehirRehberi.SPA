@@ -1,0 +1,8 @@
+<h2>User List</h2>
+<div *ngIf="isLoading">Loading...</div> <!-- Yüklenme mesajı -->
+<ul *ngIf="!isLoading && users.length > 0">
+  <li *ngFor="let user of users">
+    {{ user.name }} - {{ user.email }}
+  </li>
+</ul>
+<div *ngIf="!isLoading && users.length === 0">No users found.</div> <!-- Boş liste mesajı -->
